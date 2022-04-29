@@ -3,7 +3,17 @@
 @import "./header.scss";
 @import "./firstSection.scss";
 @import "./secondSection.scss";
-@import './vars.scss';
+@import "./thirdSection.scss";
+@import "./vars.scss";
+@import "./fourthSection.scss";
+@import "./slider.scss";
+@import "./fifthSection.scss";
+@import "./sixthSection.scss";
+@import "./burger.scss";
+@import "./footer.scss";
+@import "./portfolio/portfolio.scss";
+
+
 *,
 *::before,
 *::after {
@@ -36,7 +46,7 @@ dd {
 
 /* Выставляем основные настройки по-умолчанию для body */
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
@@ -85,20 +95,101 @@ select {
 .container {
   max-width: 1370px;
   margin: 0 auto;
+  padding: 0 30px;
+
+  @media (max-width: 600px) {
+    padding: 0 25px;
+  }
 }
-.button{
-      background-color: $accent;
-      color: #fff;
-      padding: 12px 40px;
-      border: 1px solid  $accent;
-      font-weight: bold;
-      font-size: 18px;
-      transition: all 0.5s ease;
-      font-weight: 600;
-      border-radius: 100px;
-      outline: none !important;
-      width: fit-content;
-      cursor: pointer;
-      line-height: 160%;
-      max-height: 53px;
+.button {
+  background-color: $accent;
+  color: #fff;
+  padding: 12px 40px;
+  border: 1px solid $accent;
+  font-weight: bold;
+  font-size: 18px;
+  transition: all 0.5s ease;
+  font-weight: 600;
+  border-radius: 100px;
+  outline: none !important;
+  width: fit-content;
+  cursor: pointer;
+  line-height: 160%;
+  max-height: 53px;
+}
+
+.button-outlined {
+  color: $accent;
+  padding: 12px 40px;
+  border: 1px solid $accent;
+  font-weight: bold;
+  font-size: 18px;
+  transition: all 0.5s ease;
+  font-weight: 600;
+  border-radius: 100px;
+  outline: none !important;
+  width: fit-content;
+  cursor: pointer;
+  line-height: 160%;
+  max-height: 53px;
+
+  &:hover {
+    background: #00ac6a3c;
+  }
+}
+
+.mobile_menu {
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #0000004d;
+  z-index: 101;
+  visibility: hidden;
+  transition: linear 0.5s;
+
+  .mobile_menu_container {
+    transform: translate(-100%);
+    width: 75%;
+    height: 100%;
+    background: white;
+    padding: 50px 32px 0px;
+    display: flex;
+    flex-direction: column;
+    transition: transform linear 0.5s;
+
+    a {
+      width: max-content;
+    }
+
+    img {
+      width: 100px;
+    }
+
+    ul {
+      padding: 0;
+      margin: 0;
+      margin-top: 25px;
+      a {
+        text-decoration: none;
+      }
+      li {
+        list-style-type: none;
+        padding: 16px 0;
+        border-bottom: 1px solid #eaeaea;
+        color: black;
+      }
+    }
+  }
+}
+
+.show {
+  opacity: 1;
+  visibility: visible;
+  transition: linear 0.5s;
+
+  .mobile_menu_container {
+    transform: translate(0%);
+  }
 }

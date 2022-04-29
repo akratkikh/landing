@@ -1,264 +1,545 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="utf-8" />
-    <title>landing</title>
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <!-- Start Of Social Graph Protocol Meta Data -->
-    <meta property="og:locale" content="ru_RU" />
-    <meta property="og:type" content="" />
-    <meta property="og:description" content="" />
-    <meta property="og:title" content="" />
-    <meta property="og:image" content="" />
-    <meta property="og:url" content="" />
-    <meta property="og:site_name" content="" />
-    <!-- End Of Social Graph Protocol Meta Data -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1,
-            maximum-scale=1"
-    />
-    <!-- <meta name="yandex-verification" content="YOUR_YM_VERIFICATION_CODE_HERE" /> -->
-    <link rel="preload" href="css/main.min.css" as="style" />
-    <link rel="dns-prefetch" href="//use.fontawesome.com/" />
-    <!-- <link rel="dns-prefetch" href="//mc.yandex.ru/">
-        <link rel="dns-prefetch" href="//www.googletagmanager.com/"> -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
-      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
-      crossorigin="anonymous"
-    />
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script> -->
-    <script
-      src="http://code.jquery.com/jquery-3.3.1.min.js"
-      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="css/main.min.css" />
-    <!-- Schema.org markup -->
-  </head>
 
-  <body>
-    <header class="header">
-      <div class="container">
-        <div class="header__navigation">
-          <img class="header__navigation-logo" src="./assets/logo.png" alt="" />
-          <span>About Us</span>
-          <span>Services</span>
-          <span>Portfolio</span>
-          <div class="header__navigation-contact button">Contact Us</div>
+<head>
+  <meta charset="utf-8" />
+  <title>landing</title>
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <!-- Start Of Social Graph Protocol Meta Data -->
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:type" content="" />
+  <meta property="og:description" content="" />
+  <meta property="og:title" content="" />
+  <meta property="og:image" content="" />
+  <meta property="og:url" content="" />
+  <meta property="og:site_name" content="" />
+  <!-- End Of Social Graph Protocol Meta Data -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1,
+            maximum-scale=1" />
+  <!-- <meta name="yandex-verification" content="YOUR_YM_VERIFICATION_CODE_HERE" /> -->
+  <link rel="preload" href="css/main.min.css" as="style" />
+  <link rel="dns-prefetch" href="//use.fontawesome.com/" />
+  <!-- <link rel="dns-prefetch" href="//mc.yandex.ru/">
+        <link rel="dns-prefetch" href="//www.googletagmanager.com/"> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous" />
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script> -->
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/main.min.css" />
+  <!-- Schema.org markup -->
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header__navigation">
+        <a href="./"><img class="header__navigation-logo" src="./assets/logo.png" alt="" /></a>
+        <span>About Us</span>
+        <span><a href="./portfolio.html">Portfolio</a></span>
+        <span>Partner with us</span>
+        <div class="header__navigation-contact button">Contact Us</div>
+      </div>
+      <div class="header__mobile__navigation">
+        <a href="./"><img class="header__navigation-logo" src="./assets/logo.png" alt="" /></a>
+
+      </div>
+
+    </div>
+  </header>
+  <div class="menu-wrapper">
+    <div class="hamburger-menu"></div>
+  </div>
+  <div class="mobile_menu">
+    <div class="mobile_menu_container">
+      <a href="./"><img src="./assets/logo.png" alt="" /></a>
+      <ul>
+        <a href="#">
+          <li>About us</li>
+        </a>
+        <a href="./portfolio.html">
+          <li>Portfolio</li>
+        </a>
+        <a href="#">
+          <li>Partner with us</li>
+        </a>
+        <a href="#">
+          <li>Contact us</li>
+        </a>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container">
+    <section class="first-section">
+      <div class="inner-back"></div>
+      <div class="first-section__left">
+        <div class="first-section__left-title">
+          <h1 class="asd">
+            We make going digital
+            <span>easy</span>
+          </h1>
+        </div>
+        <p class="first-section__left-text">
+          <span>
+            Custom software development company Softvoya helps fast-growing
+            tech companies and startups bring their ideas to life. We connect
+            our customers with dedicated teams specializing in engineering,
+            design, and quality assurance to deliver world class software
+            solutions for users.
+          </span>
+        </p>
+        <div class="first-section__left-button button">Let's talk!</div>
+      </div>
+      <div class="first-section__right">
+        <lottie-player class="anim" src="https://assets4.lottiefiles.com/packages/lf20_tpjldw2p.json"
+          background="transparent" speed="1" loop autoplay>
+        </lottie-player>
+      </div>
+    </section>
+    <section>
+      <div class="second-section">
+        <h2>Solution driven expertise</h2>
+        <div class="second-section__infoblock">
+          <div class="second-section__infoblock-info">
+            <h3>Software development</h3>
+            <p>
+              Your bespoke custom software solution will be designed to
+              identify and solve problem areas for your customers, while
+              showcasing what makes your business unique. With a detailed list
+              of requirements we design a visual prototype, then develop
+              specific features and functions with the help of emerging
+              technologies and programming languages. To ensure we exceed your
+              expectations, quality assurance is conducted in preparation for
+              launch and effective ongoing maintenance.
+            </p>
+          </div>
+          <div class="second-section__infoblock-scroll"></div>
+          <div class="second-section__infoblock-img">
+            <img src="https://api.appservice.us/wp-content/uploads/2021/11/Software%20development.svg?_t=1636292033"
+              alt="" />
+          </div>
+        </div>
+        <div class="second-section__infoblock">
+          <div class="second-section__infoblock-img">
+            <img src="https://api.appservice.us/wp-content/uploads/2021/11/Mobile%20development.svg?_t=1636292128"
+              alt="" />
+          </div>
+          <div class="second-section__infoblock-scroll"></div>
+          <div class="second-section__infoblock-info">
+            <h3>Mobile app development</h3>
+            <p>
+              Alleviate your market’s pain points with mobile software
+              solutions designed ahead of the latest software trends. Our team
+              is passionate about the latest technology and design industry
+              trends, while delivering effective custom application
+              development services for iOS and Android.
+            </p>
+          </div>
+        </div>
+        <div class="second-section__infoblock">
+          <div class="second-section__infoblock-info">
+            <h3>MVP development</h3>
+            <p>
+              Bring your idea to life and meet the needs of early adopters
+              with a functioning Minimum Viable Product created by our
+              software engineers. We apply extensive business logic to deliver
+              top custom software development services and a fast product
+              launch with fewer expenses to your pocket. Specific product
+              features and user requirements mixed with user expectations to
+              define how the reliable custom software should work guide our
+              designers to construct a user-friendly prototype. We focus on
+              optimized software development cycles before testing the final
+              MVP version for feedback.
+            </p>
+          </div>
+          <div class="second-section__infoblock-scroll"></div>
+          <div class="second-section__infoblock-img">
+            <img src="https://api.appservice.us/wp-content/uploads/2021/11/MVP%20development.svg?_t=1636292555"
+              alt="" />
+          </div>
+        </div>
+        <div class="second-section__infoblock">
+          <div class="second-section__infoblock-img">
+            <img src="https://api.appservice.us/wp-content/uploads/2021/11/Web%20development.svg?_t=1636292601"
+              alt="" />
+          </div>
+          <div class="second-section__infoblock-scroll"></div>
+          <div class="second-section__infoblock-info">
+            <h3>Web development</h3>
+            <p>
+              Boost your digital transformation with a secure, scalable and
+              user-driven website from our software development company. Our
+              dedicated team of web development specialists will provide you
+              with professional software development services specifically for
+              your target audience. Softvoya is a reliable technology partner
+              that provides high-quality custom web development and software
+              maintenance services to fit your needs. Our team of expert
+              programmers are trained on industry standards, business needs
+              and cutting edge technologies, providing user-friendly and
+              professional, yet delightful, industry leading solutions.
+            </p>
+          </div>
+        </div>
+        <div class="second-section__infoblock">
+          <div class="second-section__infoblock-info">
+            <h3>Technical support</h3>
+            <p>
+              Ensure the best user experience and enhance your project
+              performance with our 24/7 client-oriented specialists and
+              advisors. Choosing tech support services from our software
+              development company, you get a cohesive team of highly skilled
+              and experienced specialists, fully devoted to your brand and
+              ready to solve issues of any complexity quickly and effectively.
+              Following best safety standards and practices, experienced
+              offshore IT specialists ensure full control over your company’s
+              cybersecurity infrastructure and digital solutions.
+            </p>
+          </div>
+          <div class="second-section__infoblock-scroll"></div>
+          <div class="second-section__infoblock-img">
+            <img src="https://api.appservice.us/wp-content/uploads/2021/11/Technical%20support.svg?_t=1636292647"
+              alt="" />
+          </div>
+        </div>
+        <div class="second-section__infoblock">
+          <div class="second-section__infoblock-img">
+            <img src="https://api.appservice.us/wp-content/uploads/2021/11/Dedicated%20tech%20teams.svg?_t=1636292693"
+              alt="" />
+          </div>
+          <div class="second-section__infoblock-scroll"></div>
+          <div class="second-section__infoblock-info">
+            <h3>Dedicated tech teams</h3>
+            <p>
+              Leave the custom software development and maintenance to our
+              team of technical experts, we’ll let you sit back to enjoy the
+              solutions and effective results. We work autonomously but we
+              understand the importance of transparency in the workflow.
+              That’s why we communicate and report our status as often as you
+              need. We provide all types of custom software development
+              outsourcing services, including business analysis, QA,
+              maintenance and consulting. Our teams maintain flexibility to
+              re-prioritize and adjust with a view to delivering world class
+              business software solutions.
+            </p>
+          </div>
+        </div>
+        <div class="second-section__infoblock">
+          <div class="second-section__infoblock-info">
+            <h3>UI/UX Design</h3>
+            <p>
+              Whether you need to develop a design from scratch or just a
+              minimal redesign of the existing software (for example, to
+              increase conversions) – our team rolls up their sleeves, dives
+              into your business specifics, and analyzes your product goals to
+              deliver world class custom solutions. We strive for your new
+              design to meet all your requirements today, but make your
+              software projects scalable for the future.
+            </p>
+          </div>
+          <div class="second-section__infoblock-scroll"></div>
+          <div class="second-section__infoblock-img">
+            <img src="https://api.appservice.us/wp-content/uploads/2021/11/UX%20Design.svg?_t=1636292738" alt="" />
+          </div>
+        </div>
+        <div class="button-outlined">Let's talk!</div>
+      </div>
+    </section>
+    <section>
+      <div class="third-section">
+        <h2>Benefits of working with our software development company</h2>
+        <div class="third-section__infoblock">
+          <div class="third-section__infoblock-container">
+            <img src="./assets/indexPageImages//Transparency_in_business_processes.svg" />
+            <div class="third-section__infoblock-info">
+              <h4>Transparency in business processes</h4>
+              <p>
+                Our managers will negotiate all the stages of web or mobile
+                application development and keep you informed about the
+                progress during the whole software development cycle.
+              </p>
+            </div>
+          </div>
+          <div class="third-section__infoblock-container">
+            <img src="./assets/indexPageImages//Flexible_engagement_model.svg" />
+            <div class="third-section__infoblock-info">
+              <h4>Flexible engagement model</h4>
+              <p>
+                You may choose the software developers for the project hourly
+                or by a fixed-price model and then change them according to
+                your business requirements. We completed over 100 software
+                development projects and know how to maximize your profit and
+                boost your conversions.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="third-section__infoblock">
+          <div class="third-section__infoblock-container">
+            <img src="./assets/indexPageImages//Scalability_of_the_end_product.svg" />
+            <div class="third-section__infoblock-info">
+              <h4>Scalability of the end product</h4>
+              <p>
+                We provide tailored mobile and web apps that fit your budget,
+                at the same time, can be changed to meet growing demand. By
+                working with our outsourcing service providers, you’ll get a
+                trusted software development partner.
+              </p>
+            </div>
+          </div>
+          <div class="third-section__infoblock-container">
+            <img src="./assets/indexPageImages//Security_of_your_data.svg" />
+            <div class="third-section__infoblock-info">
+              <h4>Security services</h4>
+              <p>
+                We appreciate your trust and take necessary security measures
+                to prevent data leaks.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-    </header>
-    <div class="container">
-      <section class="first-section">
-        <div class="inner-back"></div>
-        <div class="first-section__left">
-          <div class="first-section__left-title">
-            <h1 class="asd">
-              We make going digital
-              <span>easy</span>
-            </h1>
-          </div>
-          <p class="first-section__left-text">
-            <span>
-              Custom software development company Softvoya helps fast-growing
-              tech companies and startups bring their ideas to life. We connect
-              our customers with dedicated teams specializing in engineering,
-              design, and quality assurance to deliver world class software
-              solutions for users.
-            </span>
-          </p>
-          <div class="first-section__left-button button">Let's talk!</div>
-        </div>
-        <div class="first-section__right">
-          <lottie-player
-            class="anim"
-            src="https://assets4.lottiefiles.com/packages/lf20_tpjldw2p.json"
-            background="transparent"
-            speed="1"
-            loop
-            autoplay
-          >
-          </lottie-player>
-        </div>
-      </section>
-      <section>
-        <div class="second-section">
-          <h2>Solution driven expertise</h2>
-          <div class="second-section__infoblock">
-            <div class="second-section__infoblock-info">
-              <h3>Software development</h3>
-              <p>
-                Your bespoke custom software solution will be designed to
-                identify and solve problem areas for your customers, while
-                showcasing what makes your business unique. With a detailed list
-                of requirements we design a visual prototype, then develop
-                specific features and functions with the help of emerging
-                technologies and programming languages. To ensure we exceed your
-                expectations, quality assurance is conducted in preparation for
-                launch and effective ongoing maintenance.
-              </p>
-            </div>
-            <div class="second-section__infoblock-img">
-              <img
-                src="https://api.appservice.us/wp-content/uploads/2021/11/Software%20development.svg?_t=1636292033"
-                alt=""
-              />
-            </div>
-          </div>
-          <div class="second-section__infoblock">
-            <div class="second-section__infoblock-img">
-              <img
-                src="https://api.appservice.us/wp-content/uploads/2021/11/Mobile%20development.svg?_t=1636292128"
-                alt=""
-              />
-            </div>
-            <div class="second-section__infoblock-info">
-              <h3>Mobile app development</h3>
-              <p>
-                Alleviate your market’s pain points with mobile software
-                solutions designed ahead of the latest software trends. Our team
-                is passionate about the latest technology and design industry
-                trends, while delivering effective custom application
-                development services for iOS and Android.
-              </p>
-            </div>
-          </div>
-          <div class="second-section__infoblock">
-            <div class="second-section__infoblock-info">
-              <h3>MVP development</h3>
-              <p>
-                Bring your idea to life and meet the needs of early adopters
-                with a functioning Minimum Viable Product created by our
-                software engineers. We apply extensive business logic to deliver
-                top custom software development services and a fast product
-                launch with fewer expenses to your pocket. Specific product
-                features and user requirements mixed with user expectations to
-                define how the reliable custom software should work guide our
-                designers to construct a user-friendly prototype. We focus on
-                optimized software development cycles before testing the final
-                MVP version for feedback.
-              </p>
-            </div>
-            <div class="second-section__infoblock-img">
-              <img
-                src="https://api.appservice.us/wp-content/uploads/2021/11/MVP%20development.svg?_t=1636292555"
-                alt=""
-              />
-            </div>
-          </div>
-          <div class="second-section__infoblock">
-            <div class="second-section__infoblock-img">
-              <img
-                src="https://api.appservice.us/wp-content/uploads/2021/11/Web%20development.svg?_t=1636292601"
-                alt=""
-              />
-            </div>
-            <div class="second-section__infoblock-info">
-              <h3>Web development</h3>
-              <p>
-                Boost your digital transformation with a secure, scalable and
-                user-driven website from our software development company. Our
-                dedicated team of web development specialists will provide you
-                with professional software development services specifically for
-                your target audience. Softvoya is a reliable technology partner
-                that provides high-quality custom web development and software
-                maintenance services to fit your needs. Our team of expert
-                programmers are trained on industry standards, business needs
-                and cutting edge technologies, providing user-friendly and
-                professional, yet delightful, industry leading solutions.
-              </p>
-            </div>
-          </div>
-          <div class="second-section__infoblock">
-            <div class="second-section__infoblock-info">
-              <h3>Technical support</h3>
-              <p>
-                Ensure the best user experience and enhance your project
-                performance with our 24/7 client-oriented specialists and
-                advisors. Choosing tech support services from our software
-                development company, you get a cohesive team of highly skilled
-                and experienced specialists, fully devoted to your brand and
-                ready to solve issues of any complexity quickly and effectively.
-                Following best safety standards and practices, experienced
-                offshore IT specialists ensure full control over your company’s
-                cybersecurity infrastructure and digital solutions.
-              </p>
-            </div>
-            <div class="second-section__infoblock-img">
-              <img
-                src="https://api.appservice.us/wp-content/uploads/2021/11/Technical%20support.svg?_t=1636292647"
-                alt=""
-              />
-            </div>
-          </div>
-          <div class="second-section__infoblock">
-            <div class="second-section__infoblock-img">
-              <img
-                src="https://api.appservice.us/wp-content/uploads/2021/11/Dedicated%20tech%20teams.svg?_t=1636292693"
-                alt=""
-              />
-            </div>
-            <div class="second-section__infoblock-info">
-              <h3>Dedicated tech teams</h3>
-              <p>
-                Leave the custom software development and maintenance to our
-                team of technical experts, we’ll let you sit back to enjoy the
-                solutions and effective results. We work autonomously but we
-                understand the importance of transparency in the workflow.
-                That’s why we communicate and report our status as often as you
-                need. We provide all types of custom software development
-                outsourcing services, including business analysis, QA,
-                maintenance and consulting. Our teams maintain flexibility to
-                re-prioritize and adjust with a view to delivering world class
-                business software solutions.
-              </p>
-            </div>
-          </div>
-          <div class="second-section__infoblock">
-            <div class="second-section__infoblock-info">
-              <h3>UI/UX Design</h3>
-              <p>
-                Whether you need to develop a design from scratch or just a
-                minimal redesign of the existing software (for example, to
-                increase conversions) – our team rolls up their sleeves, dives
-                into your business specifics, and analyzes your product goals to
-                deliver world class custom solutions. We strive for your new
-                design to meet all your requirements today, but make your
-                software projects scalable for the future.
-              </p>
-            </div>
+    </section>
 
-            <div class="second-section__infoblock-img">
-              <img
-                src="https://api.appservice.us/wp-content/uploads/2021/11/UX%20Design.svg?_t=1636292738"
-                alt=""
-              />
+    <section>
+      <div class="fourth-section">
+        <h2>Partner With Our Custom Software Development Company</h2>
+        <p class="fourth-section-info">
+          We have a passion for solving complex problems and delivering
+          quality software services to our customers. Whether designing a new
+          product or enhancing an existing one, our team of digital experts is
+          ready to develop a solution with measurable business results. We are
+          a community of dedicated engineers, custom software developers,
+          designers, and IT managers who are passionate about embracing the
+          mindset of our clients to deliver seamless and professional custom
+          development, project management and consulting services.
+        </p>
+        <div class="carousel">
+          <div class="nav nav-left">
+            <div class="ion-chevron-left carousel-arrow-icon-left"></div>
+          </div>
+
+          <div class="carousel-content">
+            <div class="slide">
+              <img src="./assets/indexPageImages/efr.png" />
+              <div class="slide-content">
+                <h4>Employee & Family Resources - Website</h4>
+                <p>
+                  EFR (Employees and Family Resources) specializes in the
+                  prevention, intervention, and treatment of substance use
+                  disorders and behavioral health issues. The client wanted to
+                  redesign a corporate website of a non-profit organization
+                  that helps people manage life’s challenges to reach their
+                  full potential.
+                </p>
+                <div class="block-to-link"><a>Learn more</a></div>
+              </div>
+            </div>
+            <div class="slide">
+              <img src="./assets/indexPageImages/Heliosphere.png" />
+              <div class="slide-content">
+                <h4>Heliosphere - Website</h4>
+                <p>
+                  This producer of spaceship and flight simulation equipment
+                  wanted a user friendly website to demonstrate the company’s
+                  expertise. Key features should include: a catalog page with
+                  navigation, admin panel for downloading content, and a
+                  contact form with two-step authentication.
+                </p>
+                <div class="block-to-link"><a>Learn more</a></div>
+              </div>
+            </div>
+            <div class="slide">
+              <img src="./assets/indexPageImages/Easysoup.png" />
+              <div class="slide-content">
+                <h4>Easy Soup - Food ordering platform</h4>
+                <p>
+                  A healthy fast food chain wanted an upgrade from a landing
+                  page to a fully optimized website. The solution had to
+                  synchronize retailers’ point-of-sale systems with online
+                  delivery accounts. The key features should include: a
+                  personal account, loyalty program, a user-friendly food
+                  catalog, and an add to cart option.
+                </p>
+                <div class="block-to-link"><a>Learn more</a></div>
+              </div>
+            </div>
+            <div class="slide">
+              <img src="./assets/indexPageImages/Kayakventure.png" />
+              <div class="slide-content">
+                <h4>KayakVenture - Rental mobile application</h4>
+                <p>
+                  The client wanted to design an MVP app for kayak rentals.
+                  The application should include registration via Apple ID, an
+                  interactive map, a booking system for different sports
+                  equipment and boats, and support for leaving comments and
+                  feedback.
+                </p>
+                <div class="block-to-link"><a>Learn more</a></div>
+              </div>
+            </div>
+            <div class="slide">
+              <img src="./assets/indexPageImages/Karzal.png" />
+              <div class="slide-content">
+                <h4>Karzal - Rental web application</h4>
+                <p>
+                  The customer wanted to develop an MVP for a digital renting
+                  platform for equipment, household appliances, and other
+                  goods. The goal of the project was to develop a
+                  user-friendly marketplace that comprises: a sign-in process,
+                  personal account settings, connection to the payment
+                  systems, ability to comment and rate items, and an item
+                  booking option.
+                </p>
+                <div class="block-to-link"><a>Learn more</a></div>
+              </div>
+            </div>
+            <div class="slide">
+              <img src="./assets/indexPageImages/pilates.png" />
+              <div class="slide-content">
+                <h4>Pilates Iowa - Social forum website</h4>
+                <p>
+                  Pilates Iowa establishes a platform that will allow
+                  instructors to interact and learn from other instructors as
+                  well as clients. The client wanted to develop a website that
+                  would function as a reliable and trustworthy hub of
+                  information related to Pilates. A website should be
+                  connected with a forum and be fully customized.
+                </p>
+                <div class="block-to-link"><a>Learn more</a></div>
+              </div>
             </div>
           </div>
+
+          <div class="nav nav-right">
+            <div class="ion-chevron-right carousel-arrow-icon-right"></div>
+          </div>
         </div>
-      </section>
+        <div class="button-outlined">Our projects</div>
+      </div>
+    </section>
+    <section>
+      <div class="fifth-section">
+        <h2>Our Partners</h2>
+        <div class="partners">
+          <img src="./assets/partnersIcons/accencture.svg" />
+          <img src="./assets/partnersIcons/JonsonJonson.svg" />
+          <img src="./assets/partnersIcons/kinseyco.svg" />
+          <img src="./assets/partnersIcons/Karzal.svg" />
+          <img src="./assets/partnersIcons/itransitionlogohorizontal_20210330_112058.png" />
+          <img src="./assets/partnersIcons/logo-green.png" />
+          <img src="./assets/partnersIcons/logo-noveo_1600x.png" />
+          <img src="./assets/partnersIcons/eproduce.png" />
+          <img src="./assets/partnersIcons/logo11.png" />
+          <img src="./assets/partnersIcons/7.png" />
+        </div>
+        <p>
+          Maximize your business results with our web and mobile app
+          development company: Softvoya uses cutting edge technology and
+          individualized approach of our custom software development company
+          to launch and sustain your digital transformation.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="sixth-section">
+        <div class="sixth-section-animation">
+          <img src="./assets/indexPageImages/points.svg">
+          <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_p0a2mplk.json" background="transparent"
+            speed="1" style="width: 100%; height: 100%; background: white;" loop autoplay></lottie-player>
+        </div>
+        <div class="sixth-section-form">
+          <h2>Bring your vision to life</h2>
+          <form>
+            <input type="text" placeholder="Name" />
+            <input type="text" placeholder="Corporate Email" />
+            <textarea type="text" placeholder="Tell us more about your idea"></textarea>
+            <div class="button">Send</div>
+          </form>
+          <img src="./assets/indexPageImages/pointsTriangle.svg">
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="footer_messangers_links">
+      <a href="./"><img src="./assets/logo.png" alt="" /></a>
+      <div class="links">
+        <a href="#">
+          <img src="./assets/icons/fb.svg">
+        </a>
+        <a href="#">
+          <img src="./assets/icons/fb.svg">
+        </a>
+        <a href="#">
+          <img src="./assets/icons/fb.svg">
+        </a>
+        <a href="#">
+          <img src="./assets/icons/fb.svg">
+        </a>
+        <a href="#">
+          <img src="./assets/icons/fb.svg">
+        </a>
+        <a href="#">
+          <img src="./assets/icons/fb.svg">
+        </a>
+      </div>
+
+
     </div>
+    <div class="footer_addresses">
+      <h2>Addresses</h2>
+      <p>
+        500 Locust Ave<br>
+        Suite #127<br>
+        Des Moines, Iowa<br>
+        50309<br>
+      </p>
+      <p>
+        ul. Octowa 24<br>
+        15-399 Białystok<br>
+        woj. Podlaskie<br>
+      </p>
+      <p>
+        <a href="#">exceed.com</a>
+      </p>
 
-    <!-- </div> -->
+    </div>
+    <div class="footer_company">
+      <h2>Company</h2>
+      <a href="#">
+        About us
+      </a>
+      <a href="./portfolio.html">
+        Portfolio
+      </a>
+      <a href="#">
+        Partner with us
+      </a>
+      <a href="#">
+        Contact us
+      </a>
+    </div>
+  </footer>
 
-    <script src="js/bundle.js"></script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <!-- Yandex.Metrika counter -->
-    <!-- <script type="text/javascript" >
+  <!-- </div> -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script src="js/bundle.js"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <!-- Yandex.Metrika counter -->
+  <!-- <script type="text/javascript" >
 	    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
 	    m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
 	    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
@@ -271,16 +552,17 @@
 	    });
         </script>
         <noscript><div><img src="https://mc.yandex.ru/watch/YOUR_YM_ID_HERE" style="position:absolute; left:-9999px;" alt="" /></div></noscript> -->
-    <!-- /Yandex.Metrika counter -->
+  <!-- /Yandex.Metrika counter -->
 
-    <!-- Google Tag Manager -->
-    <!-- <script>
+  <!-- Google Tag Manager -->
+  <!-- <script>
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','YOUR_GTM_ID_HERE');
         </script> -->
-    <!-- End Google Tag Manager -->
-  </body>
+  <!-- End Google Tag Manager -->
+</body>
+
 </html>

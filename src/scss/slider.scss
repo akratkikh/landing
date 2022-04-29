@@ -1,0 +1,134 @@
+.carousel {
+    margin-top: 40px;
+    position: relative;
+    height: 424px;
+
+    .carousel-content {
+        position: relative;
+        overflow: hidden;
+        transition: width 0.4s;
+        height: 100%;
+    }
+
+    .slide {
+        height: 356px;
+        position: absolute;
+        z-index: 1;
+        transition: left 0.4s cubic-bezier(0.47, 0.13, 0.15, 0.89);
+        padding: 0px 25px;
+        cursor: pointer;
+
+        img {
+            object-fit: cover;
+            border-radius: 20px;
+            border: 1px solid #eaeaea;
+            width: 100%;
+            height: 100%;
+        }
+
+        & .slide-content {
+            background: #93d7bd;
+            position: absolute;
+            top: 32px;
+            left: 57px;
+            width: calc(100% - 62px);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border-radius: 20px;
+            padding: 56px 32px;
+            justify-content: space-between;
+            opacity: 0;
+
+            h4 {
+                font-size: 24px;
+            }
+
+            .block-to-link {
+                position: relative;
+
+                & a {
+                    font-size: 1rem;
+                    font-weight: bold;
+                    color: #00ac6a;
+                    &:hover::after {
+                        position: absolute;
+                        left: 105px;
+                        top: -5px;
+                        font-size: 24px;
+                        content: "\2192";
+                    }
+                }
+            }
+
+            @media (max-width: 1200px) {
+                p {
+                    display: -webkit-box;
+                    -webkit-line-clamp: 5;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                }
+            }
+        }
+
+        &:hover .slide-content {
+            transition: opacity 0.3s;
+            opacity: 1;
+        }
+    }
+
+    .nav {
+        position: absolute;
+        top: 40%;
+        margin-top: -10px;
+        width: 15px;
+        height: 15px;
+        z-index: 2;
+        cursor: pointer;
+        outline: none;
+        -webkit-user-select: none;
+        border-left: 3px solid $accent;
+        border-bottom: 3px solid $accent;
+        border-top:2px;
+        border-right: 2px;
+        border-radius: 2px;
+    }
+
+    .nav-left {
+        left: -25px;
+        transform: rotate(45deg);
+    }
+
+    .nav-right {
+        right: -25px;
+        transform: rotate(225deg);
+    }
+
+    .carousel-arrow-icon-left {
+        margin-left: 5px;
+        margin-top: 2px;
+    }
+
+    .carousel-arrow-icon-right {
+        margin-left: 7px;
+        margin-top: 2px;
+    }
+
+    @media (max-width: 600px) {
+        .nav-left {
+            left: 0px;
+        }
+        .nav-right {
+            right: 0px;
+        }
+
+        .slide-content {
+            top: 26px!important;
+            left: 46px!important;
+
+            p {
+                -webkit-line-clamp: 4!important;
+            }
+        }
+    }
+}

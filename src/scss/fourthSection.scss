@@ -1,0 +1,24 @@
+.fourth-section {
+  margin-bottom: 140px;
+  h2 {
+    font-size: 42px;
+    margin-bottom: 40px;
+  }
+
+  .fourth-section-info {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .button-outlined {
+    margin: 0 auto;
+  }
+
+  @media (max-width: 600px) {
+    margin-bottom: 40px;
+    h2 {
+      font-size: 26px;
+    }
+  }
+}

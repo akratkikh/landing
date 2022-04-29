@@ -1,0 +1,44 @@
+.fifth-section {
+  margin-bottom: 140px;
+  h2 {
+    text-align: center;
+    font-size: 42px;
+  }
+
+  .partners {
+    margin-top: 60px;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    img {
+      width: auto;
+      height: 100%;
+      margin: 0 32px 60px;
+    }
+  }
+
+  p {
+    font-size: 18px;
+    text-align: center;
+    padding: 0px 10px;
+  }
+
+  @media (max-width: 600px) {
+    margin-bottom: 40px;
+    h2 {
+      font-size: 26px;
+    }
+
+    .partners {
+      margin-top: 40px;
+      margin-bottom: 40px;
+      img {
+        width: auto;
+        height: 100%;
+        max-height: 40px;
+        margin: 0 8px 28px;
+      }
+    }
+  }
+}

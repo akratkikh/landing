@@ -50,10 +50,41 @@
   .first-section__right {
     z-index: 3;
     .anim {
-      // width: 800px;
-      // height: 800px;
       top: -50px;
       position: relative;
     }
+  }
+
+  @media(max-width: 768px){
+    flex-direction: column;
+    padding-top: 50px;
+    & .first-section__right {
+      height: 500px;
+    order: -1;
+    }
+
+    & .first-section__left {
+      width: 100%;
+    }
+  }
+
+  @media(max-width: 600px){
+    padding-bottom: 60px;
+
+    & .first-section__right {
+      height: auto;
+    }
+
+    .first-section__left-title {
+      h1 {
+        font-size: 42px!important;
+      }
+    }
+
+    .first-section__left-text {
+      margin-bottom: 28px!important;
+    }
+
+
   }
 }

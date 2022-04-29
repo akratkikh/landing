@@ -120,10 +120,10 @@ module.exports = {
     ]
   },
   plugins: [
-    // new HtmlWebpackPlugin({ 
-    //   filename: '/portfolio.html',
-    //   template: 'src/portfolio.html',
-    // }),
+    new HtmlWebpackPlugin({ 
+      filename: 'pages/portfolio.html',
+      template: 'src/pages/portfolio.html'
+    }),
     new MiniCssExtractPlugin({
         filename: './css/main.min.css'
       }),

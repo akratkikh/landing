@@ -1,4 +1,5 @@
 .second-section {
+  margin-bottom: 140px;
   h2 {
     font-size: 42px;
   }
@@ -12,16 +13,113 @@
   }
 
   .second-section__infoblock {
+    position: relative;
     display: flex;
     justify-content: space-between;
     margin-bottom: 50px;
     .second-section__infoblock-info {
       position: relative;
       width: 50%;
+      padding: 0 37px 100px;
+    }
+
+    .second-section__infoblock-scroll {
+      position: absolute;
+      top: 0px;
+      left: calc(50% - 1px);
+      width: 2px;
+      height: calc(100% + 50px);
+      background: #c6e9db;
+      &::before {
+        transition: all ease-in 1s;
+        content: "";
+        position: absolute;
+        width: 2px;
+        height: 0px;
+        right: 0;
+        top: 0px;
+        background: $accent;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        background: #c6e9db;
+        border-radius: 50%;
+        right: -7px;
+        top: 0px;
+        z-index: 1;
+      }
     }
     .second-section__infoblock-img {
-      width: 45%;
+      width: 50%;
       margin-bottom: auto;
+      padding: 0 37px;
     }
   }
+
+  .button-outlined {
+    margin: 0 auto;
+  }
+
+  //animation
+  .scrolled {
+    &::after {
+      background: $accent !important;
+    }
+
+    &::before {
+      background: $accent;
+      animation-duration: 2s;
+      animation-name: slidein;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes slidein {
+      from {
+        height: 0px;
+      }
+
+      to {
+        height: 100%;
+      }
+    }
+  }
+
+  @media(max-width: 600px){
+    .second-section__infoblock {
+      flex-direction: column;
+
+      .second-section__infoblock-info {
+        padding: 0 5px 20px;
+      }
+
+      .second-section__infoblock-img {
+        order: 1;
+        width: 100%;
+      }
+
+      .second-section__infoblock-info {
+        order: 2;
+        width: 100%;
+        padding: 0 15px 20px;
+      }
+
+      .second-section__infoblock-scroll {
+        left: 0;
+      }
+
+    }
+
+    h2 {
+      font-size: 26px;
+    }
+
+    h3 {
+      font-size: 22px;
+      margin-top: 10px;
+    }
+  }
+
 }
