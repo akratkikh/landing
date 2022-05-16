@@ -12,7 +12,14 @@
 @import "./burger.scss";
 @import "./footer.scss";
 @import "./portfolio/portfolio.scss";
+@import "./aboutUs/about_us.scss";
+@import "./partnerWithUs/partner_with_us.scss";
+@import "./modal.scss";
 
+
+html {
+  scroll-behavior: smooth;
+}
 
 *,
 *::before,
@@ -192,4 +199,9 @@ select {
   .mobile_menu_container {
     transform: translate(0%);
   }
+}
+
+.gradient {
+  background: linear-gradient(101.46deg, rgba(251, 250, 253, 0) 9.56%, #00ac6a0f 100%);
+  border-radius: 20px;
 }
