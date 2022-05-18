@@ -1,103 +1,105 @@
-const path = require('path');
-const fs = require('fs');
+const path = require("path");
+const fs = require("fs");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const CompressionPlugin = require("compression-webpack-plugin");
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 //function generates new html page in dist, when you create new html page in src
 function generateHtmlPlugins(templateDir) {
   const templateFiles = fs.readdirSync(templateDir);
-  return templateFiles.filter(f => {
-    return f.split('.')[1] === 'html'
-  }).map(item => {
-    const parts = item.split('.');
-    const name = parts[0];
-    const extension = parts[1];
-    return new HtmlWebpackPlugin({
-      filename: `${name}.html`,
-      template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`),
-      inject: false,
+  return templateFiles
+    .filter((f) => {
+      return f.split(".")[1] === "html";
     })
-  })
+    .map((item) => {
+      const parts = item.split(".");
+      const name = parts[0];
+      const extension = parts[1];
+      return new HtmlWebpackPlugin({
+        filename: `${name}.html`,
+        template: path.resolve(
+          __dirname,
+          `${templateDir}/${name}.${extension}`
+        ),
+        inject: false,
+      });
+    });
 }
 
 module.exports = {
-  entry: [
-    './src/js/index.js',
-    './src/scss/main.scss'
-  ],
+  entry: ["./src/js/index.js", "./src/scss/main.scss"],
   output: {
-    filename: './js/bundle.js'
+    filename: "./js/bundle.js",
+    publicPath:'/',
   },
-  devtool: 'source-map',
+  devtool: "source-map",
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.js$/,
-        include: path.resolve(__dirname, 'src/js'),
+        include: path.resolve(__dirname, "src/js"),
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: {
-            presets: ['@babel/preset-env']
-          }
-        }
+            presets: ["@babel/preset-env"],
+          },
+        },
       },
       {
         test: /\.scss$/,
         use: [
-          'style-loader',
+          "style-loader",
           MiniCssExtractPlugin.loader,
-          'css-loader',
+          "css-loader",
           {
-            loader: 'postcss-loader',
+            loader: "postcss-loader",
             options: {
-              ident: 'postcss',
-              plugins: [
-                require('autoprefixer')()
-              ]
-            }
+              ident: "postcss",
+              plugins: [require("autoprefixer")()],
+            },
           },
-          'sass-loader',
+          "sass-loader",
         ],
       },
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
         use: [
-          { 
-            loader: 'file-loader',
+          {
+            loader: "file-loader",
             options: {
-              name: 'img/[name].[ext]',
-            }
+              name: "img/[name].[ext]",
+            },
           },
           {
-            loader: 'image-webpack-loader',
+            loader: "image-webpack-loader",
             options: {
               mozjpeg: {
                 progressive: true,
-                quality: 85
+                quality: 85,
               },
               optipng: {
                 enabled: false,
               },
               pngquant: {
-                quality: '75-90',
-                speed: 4
+                quality: "75-90",
+                speed: 4,
               },
               gifsicle: {
-                interlaced: false
-              }
-            }
+                interlaced: false,
+              },
+            },
           },
         ],
       },
       {
         test: /\.html$/,
-        loader: 'html-loader'
-      }
-    ]
+        loader: "html-loader",
+      },
+    ],
   },
   optimization: {
     minimizer: [
@@ -107,7 +109,7 @@ module.exports = {
           warnings: false,
           parse: {},
           compress: {
-            drop_console: true
+            drop_console: true,
           },
           mangle: true,
           output: null,
@@ -116,30 +118,41 @@ module.exports = {
           ie8: false,
           keep_fnames: false,
         },
-      })
-    ]
+      }),
+    ],
   },
   plugins: [
-    // new HtmlWebpackPlugin({ 
-    //   filename: '/portfolio.html',
-    //   template: 'src/portfolio.html',
-    // }),
+    new HtmlWebpackPlugin({
+      filename: "portfolio/index.html",
+      template: "portfolio/index.html",
+      inject: true,
+    }),
+    new HtmlWebpackPlugin({
+      filename: "partner_with_us/index.html",
+      template: "partner_with_us/index.html",
+      inject: true,
+    }),
+    new HtmlWebpackPlugin({
+      filename: "about_us/index.html",
+      template: "about_us/index.html",
+      inject: true,
+    }),
     new MiniCssExtractPlugin({
-        filename: './css/main.min.css'
-      }),
-      new CopyWebpackPlugin([
+      filename: "./css/main.min.css",
+    }),
+    new CopyWebpackPlugin([
       // {
       //   from: './src/favicon',
       //   to: './favicon'
       // },
       {
-        from: './src/.htaccess'
-      }
+        from: "./src/.htaccess",
+      },
     ]),
     new CompressionPlugin({
       filename: "[path].gz[query]",
       test: /\.js$|\.html$/,
-      threshold: 10240
-    })
-    ].concat(generateHtmlPlugins('./src'))
-  };
+      threshold: 10240,
+    }),
+  ].concat(generateHtmlPlugins("./src")),
+};

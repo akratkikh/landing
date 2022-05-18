@@ -39,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const send_button = document.querySelector("#send-button");
   const sending_button = document.querySelector(".windows8");
   const modalContainer = document.querySelector(`.container-modal`);
+  const modalContainerError = document.querySelector(`.container-modal-error`);
   let sending = false;
 
   form.addEventListener("submit", function (e) {
@@ -73,21 +74,31 @@ document.addEventListener("DOMContentLoaded", () => {
         Accept: "application/json",
       },
       body: json,
-    }).finally(() => {
-      setTimeout(() => {
-        sending = false;
-        sendAnimation(sending);
-        modalContainer.classList.add("view");
-      }, 1000);
-    });
+    })
+      .then(() => {
+        setTimeout(() => {
+          sending = false;
+          sendAnimation(sending);
+          modalContainer.classList.add("view");
+        }, 1000);
+      })
+      .catch(() => {
+        setTimeout(() => {
+          sending = false;
+          sendAnimation(sending);
+          modalContainerError.classList.add("view");
+        }, 1000);
+      });
   });
 
   //modal
-  document
-    .querySelector(`.modal-close-button`)
-    .addEventListener("click", () => {
+  document.querySelectorAll(`.modal-close-button`).forEach((item) =>
+    item.addEventListener("click", () => {
       modalContainer.classList.remove("view");
-    });
+      modalContainerError.classList.remove("view");
+    })
+  );
+
   document.querySelector(`#lets-see`).addEventListener("click", () => {
     modalContainer.classList.remove("view");
   });
