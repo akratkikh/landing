@@ -30,18 +30,12 @@
       width: 2px;
       height: calc(100% + 50px);
       background: #c6e9db;
-      &::before {
-        transition: all ease-in 1s;
-        content: "";
-        position: absolute;
-        width: 2px;
-        height: 0px;
-        right: 0;
-        top: 0px;
-        background: $accent;
-      }
-      &::after {
-        content: "";
+      animation-duration: 4s;
+      animation-delay: 4s;
+      transition-delay: 4s;
+      transition-duration: 4s;
+
+      .loader-circle {
         position: absolute;
         width: 16px;
         height: 16px;
@@ -50,6 +44,15 @@
         right: -7px;
         top: 0px;
         z-index: 1;
+      }
+
+      .loader-line {
+        position: absolute;
+        width: 2px;
+        height: 0px;
+        right: 0;
+        top: 0px;
+        background: $accent;
       }
     }
     .second-section__infoblock-img {
@@ -65,15 +68,23 @@
 
   //animation
   .scrolled {
-    &::after {
+
+    height: 1px ;
+    background-color: red;
+    
+    & .loader-circle {
       background: $accent !important;
     }
 
-    &::before {
+    & .loader-line-full {
       background: $accent;
-      animation-duration: 2s;
-      animation-name: slidein;
-      animation-fill-mode: forwards;
+      position: absolute;
+      top: 0;
+      width: 2px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 999;
+      transition: height 2s ease-in-out;
     }
 
     @keyframes slidein {

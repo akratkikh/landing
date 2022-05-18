@@ -81,29 +81,22 @@ footer {
         }
     }
 
-    @media (max-width: 1000px) {
-        .footer_company {
-            display: none;
+    @media (max-width: 600px) {
+        flex-direction: column;
+        align-items: center;
+        .footer_messangers_links, .footer_addresses, .footer_company {
+            width: auto;
         }
+        h2 {
+            margin-bottom: 20px;
+        }
+    }
 
-        .footer_messangers_links,
-        .footer_addresses {
-            width: 50%;
+    @media (max-width: 475px) {
+        h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
         }
     }
 
-    @media (max-width: 580px) {
-        .footer_addresses {
-            display: none;
-        }
-        .footer_messangers_links {
-            width: 100%;
-            .links {
-                width: 100%;
-            }
-            img {
-                margin: 0 auto;
-            }
-        }
-    }
 }

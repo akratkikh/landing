@@ -1,12 +1,17 @@
 const searchScrollLines = (scrollLines) => {
+  let height = 0;
   scrollLines.forEach((line, index) => {
     const pos = line.getBoundingClientRect();
-    if (pos.top <= 600 && !line.classList.contains("scrolled")) {
+    if (pos.top <= 800 && !line.classList.contains("scrolled")) {
       line.classList.add("scrolled");
-    } else if (pos.top > 600 && line.classList.contains("scrolled")) {
+    } else if (pos.top > 800 && line.classList.contains("scrolled")) {
       line.classList.remove("scrolled");
     }
+
+    line.classList.contains("scrolled") && (height += line.getBoundingClientRect().height)
   });
+
+  document.querySelector(".loader-line-full").style.height = height + "px"
 };
 
 document.addEventListener("DOMContentLoaded", () => {
