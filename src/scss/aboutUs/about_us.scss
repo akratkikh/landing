@@ -132,6 +132,7 @@
 
   .block-with-diagramms__images {
     display: flex;
+    margin-bottom: 40px;
 
     img {
       border-radius: 15px;
@@ -139,10 +140,11 @@
       position: relative;
       max-width: 300px;
       max-height: 533px;
-      height: max-content;
+      height: auto;
 
       &:first-child {
         margin-top: 40px;
+        margin-bottom: 0px;
         margin-right: 5.7%;
       }
       &:last-child {
