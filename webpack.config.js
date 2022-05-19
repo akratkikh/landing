@@ -83,7 +83,7 @@ module.exports = {
   entry: ["./src/js/index.js", "./src/scss/main.scss"],
   output: {
     filename: "./js/bundle.js",
-    publicPath:'/',
+    publicPath: "/",
   },
   devtool: "source-map",
   module: {
@@ -172,19 +172,35 @@ module.exports = {
     ],
   },
   plugins: [
-    new RobotstxtPlugin(optionsRobots),
+    new HtmlWebpackPlugin({
+      filename: "portfolio/index.html",
+      template: "src/portfolio/index.html",
+      inject: false,
+    }),
+    new HtmlWebpackPlugin({
+      filename: "partner_with_us/index.html",
+      template: "src/partner_with_us/index.html",
+      inject: false,
+    }),
+    new HtmlWebpackPlugin({
+      filename: "about_us/index.html",
+      template: "src/about_us/index.html",
+      inject: false,
+    }),
     new MiniCssExtractPlugin({
       filename: "./css/main.min.css",
     }),
-    new CopyWebpackPlugin([
-      // {
-      //   from: './src/favicon',
-      //   to: './favicon'
-      // },
-      {
-        from: "./src/.htaccess",
-      },
-    ]),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: "./src/.htaccess",
+        },
+        {
+          from: "./src/public",
+          to: "./public",
+        },
+      ],
+    }),
     new CompressionPlugin({
       filename: "[path].gz[query]",
       test: /\.js$|\.html$/,

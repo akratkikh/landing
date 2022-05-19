@@ -8,10 +8,10 @@ const searchScrollLines = (scrollLines) => {
       line.classList.remove("scrolled");
     }
 
-    line.classList.contains("scrolled") && (height += line.getBoundingClientRect().height)
+    line.classList.contains("scrolled") &&
+      (height += line.getBoundingClientRect().height);
   });
-
-  document.querySelector(".loader-line-full").style.height = height + "px"
+  document.querySelector(".loader-line-full").style.height = height + "px";
 };
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -24,11 +24,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const scrollLines = document.querySelectorAll(
     ".second-section__infoblock-scroll"
   );
-  searchScrollLines(scrollLines);
 
-  document.addEventListener("scroll", () => {
+  if (scrollLines.length) {
     searchScrollLines(scrollLines);
-  });
+
+    document.addEventListener("scroll", () => {
+      searchScrollLines(scrollLines);
+    });
+  }
 
   //form
   const sendAnimation = (sending) => {
@@ -47,21 +50,46 @@ document.addEventListener("DOMContentLoaded", () => {
   const modalContainerError = document.querySelector(`.container-modal-error`);
   let sending = false;
 
+  const formName = document.querySelector("#form-name");
+  const formEmail = document.querySelector("#form-email");
+  const formText = document.querySelector("#form-text");
+
   form.addEventListener("submit", function (e) {
     e.preventDefault();
-    const formName = document.querySelector("#form-name");
-    const formEmail = document.querySelector("#form-email");
-    const formText = document.querySelector("#form-text");
+
+    const inputs = [
+      { value: formName, span: ".error-text-name" },
+      { value: formEmail, span: ".error-text-mail" },
+      { value: formText, span: ".error-text-message" },
+    ];
+
+    inputs.map((el) => {
+      el.value.addEventListener("keyup", () => {
+        if (el.value.value.replace(/\s/g, "").length === 0) {
+          document.querySelector(`${el.span}`).style.display = "block";
+        } else {
+          document.querySelector(`${el.span}`).style.display = "none";
+        }
+      });
+    });
+
     if (
-      formName.value.replace(/\s/g, "").length === 0 ||
-      formText.value.replace(/\s/g, "").length === 0 ||
-      formEmail.value.replace(/\s/g, "").length === 0
+      formName.value === "" ||
+      formEmail.value === "" ||
+      formText.value === ""
     ) {
-      document.querySelector(".error-text").style.display = "block";
+      if (formName.value === "")
+        document.querySelector(".error-text-name").style.display = "block";
+
+      if (formEmail.value === "")
+        document.querySelector(".error-text-mail").style.display = "block";
+
+      if (formText.value === "")
+        document.querySelector(".error-text-message").style.display = "block";
+
       return;
-    } else {
-      document.querySelector(".error-text").style.display = "none";
     }
+
     sending = true;
     sendAnimation(sending);
     const formData = new FormData(form);

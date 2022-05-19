@@ -2,7 +2,13 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8" />
-    <title>landing</title>
+    <title>Adev - web and mobile development company in Armenia</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      sizes="32x32"
+      href="../public/adev.ico"
+    />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <!-- Start Of Social Graph Protocol Meta Data -->
@@ -46,10 +52,9 @@
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="/css/main.min.css" />
+    <link rel="stylesheet" href="../css/main.min.css" />
     <!-- Schema.org markup -->
   </head>
-
   <body>
     <header class="header">
       <div class="container">
@@ -60,7 +65,7 @@
               src="../assets/logo.png"
               alt=""
           /></a>
-          <span><a href="">About Us</a></span>
+          <span><a href="../about_us">About Us</a></span>
           <span><a href="../portfolio">Portfolio</a></span>
           <span><a href="../partner_with_us">Partner with us</a></span>
           <a href="#form"
@@ -68,7 +73,7 @@
           >
         </div>
         <div class="header__mobile__navigation">
-          <a href="../.."
+          <a href="../"
             ><img
               class="header__navigation-logo"
               src="../assets/logo.png"
@@ -82,9 +87,9 @@
     </div>
     <div class="mobile_menu">
       <div class="mobile_menu_container">
-        <a href="../.."><img src="../assets/logo.png" alt="" /></a>
+        <a href="../"><img src="../assets/logo.png" alt="" /></a>
         <ul>
-          <a href="">
+          <a href="../about_us">
             <li>About us</li>
           </a>
           <a href="../portfolio">
@@ -388,24 +393,33 @@
           <div class="sixth-section-form gradient">
             <h2>Bring your vision to life</h2>
             <form id="send-form">
-              <input
-                type="text"
-                placeholder="Name"
-                id="form-name"
-                name="name"
-              />
-              <input
-                type="email"
-                placeholder="Corporate Email"
-                id="form-email"
-                name="email"
-              />
-              <textarea
-                type="text"
-                placeholder="Tell us more about your idea"
-                id="form-text"
-                name="text"
-              ></textarea>
+              <div class="form-item">
+                <input
+                  type="text"
+                  placeholder="Name"
+                  id="form-name"
+                  name="name"
+                />
+                <span class="error-text-name">Enter valid name</span>
+              </div>
+              <div class="form-item">
+                <input
+                  type="email"
+                  placeholder="Corporate Email"
+                  id="form-email"
+                  name="email"
+                />
+                <span class="error-text-mail">Enter valid email</span>
+              </div>
+              <div class="form-item">
+                <textarea
+                  type="text"
+                  placeholder="Tell us more about your idea"
+                  id="form-text"
+                  name="text"
+                ></textarea>
+                <span class="error-text-message">Enter message</span>
+              </div>
               <button class="button" id="send-button">Send</button>
               <div class="windows8">
                 Sending
@@ -427,7 +441,6 @@
                   </div>
                 </div>
               </div>
-              <p class="error-text">Fill in all fields of the form</p>
             </form>
           </div>
           <img
@@ -468,7 +481,7 @@
 
     <footer>
       <div class="footer_messangers_links">
-        <a href="../.."><img src="../assets/logo.png" alt="" /></a>
+        <a href="../"><img src="../assets/logo.png" alt="" /></a>
         <div class="links" style="display: none">
           <a href="#">
             <img src="../assets/icons/fb.svg" />
@@ -502,7 +515,7 @@
       </div>
       <div class="footer_company">
         <h2>Company</h2>
-        <a href=""> About us </a>
+        <a href="../about_us"> About us </a>
         <a href="../portfolio"> Portfolio </a>
         <a href="../partner_with_us"> Partner with us </a>
         <a href="#form"> Contact us </a>
@@ -511,7 +524,7 @@
 
     <!-- </div> -->
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <script src="/js/bundle.js"></script>
+    <script src="../js/bundle.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <!-- Yandex.Metrika counter -->
     <!-- <script type="text/javascript" >

@@ -34,6 +34,12 @@
     padding: 81px 191px 36px 116px;
 
     form {
+        width: 100%;
+        .form-item {
+            // width: 100%;
+            margin-bottom: 20px;
+        }
+
       input,
       textarea {
         width: 100%;
@@ -41,7 +47,6 @@
         padding: 15px 24px;
         border: 1px solid #cacaca;
         font-size: 18px;
-        margin-bottom: 20px;
       }
       textarea {
         height: 106px;
@@ -50,11 +55,10 @@
         resize: none;
       }
 
-      .error-text {
-        margin-top:12px;
+      span {
+        margin-left: 10px;
         color: red;
-        font-size: 16px;
-        font-weight: 700;
+        font-size: 13px;
         display: none;
       }
 

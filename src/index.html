@@ -2,7 +2,13 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8" />
-    <title>landing</title>
+    <title>Adev - web and mobile development company in Armenia</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      sizes="32x32"
+      href="./public/adev.ico"
+    />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <!-- Start Of Social Graph Protocol Meta Data -->
@@ -171,8 +177,10 @@
                 alt=""
               />
             </div>
-            <div class="second-section__infoblock-scroll"><div class="loader-circle"></div>
-            <div class="loader-line"></div></div>
+            <div class="second-section__infoblock-scroll">
+              <div class="loader-circle"></div>
+              <div class="loader-line"></div>
+            </div>
             <div class="second-section__infoblock-info">
               <h3>Mobile app development</h3>
               <p>
@@ -200,8 +208,10 @@
                 MVP version for feedback.
               </p>
             </div>
-            <div class="second-section__infoblock-scroll"><div class="loader-circle"></div>
-            <div class="loader-line"></div></div>
+            <div class="second-section__infoblock-scroll">
+              <div class="loader-circle"></div>
+              <div class="loader-line"></div>
+            </div>
             <div class="second-section__infoblock-img">
               <img
                 src="https://api.appservice.us/wp-content/uploads/2021/11/MVP%20development.svg?_t=1636292555"
@@ -216,8 +226,10 @@
                 alt=""
               />
             </div>
-            <div class="second-section__infoblock-scroll"><div class="loader-circle"></div>
-            <div class="loader-line"></div></div>
+            <div class="second-section__infoblock-scroll">
+              <div class="loader-circle"></div>
+              <div class="loader-line"></div>
+            </div>
             <div class="second-section__infoblock-info">
               <h3>Web development</h3>
               <p>
@@ -249,8 +261,10 @@
                 cybersecurity infrastructure and digital solutions.
               </p>
             </div>
-            <div class="second-section__infoblock-scroll"><div class="loader-circle"></div>
-            <div class="loader-line"></div></div>
+            <div class="second-section__infoblock-scroll">
+              <div class="loader-circle"></div>
+              <div class="loader-line"></div>
+            </div>
             <div class="second-section__infoblock-img">
               <img
                 src="https://api.appservice.us/wp-content/uploads/2021/11/Technical%20support.svg?_t=1636292647"
@@ -265,8 +279,10 @@
                 alt=""
               />
             </div>
-            <div class="second-section__infoblock-scroll"><div class="loader-circle"></div>
-            <div class="loader-line"></div></div>
+            <div class="second-section__infoblock-scroll">
+              <div class="loader-circle"></div>
+              <div class="loader-line"></div>
+            </div>
             <div class="second-section__infoblock-info">
               <h3>Dedicated tech teams</h3>
               <p>
@@ -296,8 +312,10 @@
                 software projects scalable for the future.
               </p>
             </div>
-            <div class="second-section__infoblock-scroll"><div class="loader-circle"></div>
-            <div class="loader-line"></div></div>
+            <div class="second-section__infoblock-scroll">
+              <div class="loader-circle"></div>
+              <div class="loader-line"></div>
+            </div>
             <div class="second-section__infoblock-img">
               <img
                 src="https://api.appservice.us/wp-content/uploads/2021/11/UX%20Design.svg?_t=1636292738"
@@ -549,24 +567,33 @@
           <div class="sixth-section-form gradient">
             <h2>Bring your vision to life</h2>
             <form id="send-form">
-              <input
-                type="text"
-                placeholder="Name"
-                id="form-name"
-                name="name"
-              />
-              <input
-                type="email"
-                placeholder="Corporate Email"
-                id="form-email"
-                name="email"
-              />
-              <textarea
-                type="text"
-                placeholder="Tell us more about your idea"
-                id="form-text"
-                name="text"
-              ></textarea>
+              <div class="form-item">
+                <input
+                  type="text"
+                  placeholder="Name"
+                  id="form-name"
+                  name="name"
+                />
+                <span class="error-text-name">Enter valid name</span>
+              </div>
+              <div class="form-item">
+                <input
+                  type="email"
+                  placeholder="Corporate Email"
+                  id="form-email"
+                  name="email"
+                />
+                <span class="error-text-mail">Enter valid email</span>
+              </div>
+              <div class="form-item">
+                <textarea
+                  type="text"
+                  placeholder="Tell us more about your idea"
+                  id="form-text"
+                  name="text"
+                ></textarea>
+                <span class="error-text-message">Enter message</span>
+              </div>
               <button class="button" id="send-button">Send</button>
               <div class="windows8">
                 Sending
@@ -588,7 +615,6 @@
                   </div>
                 </div>
               </div>
-              <p class="error-text">Fill in all fields of the form</p>
             </form>
           </div>
           <img
@@ -597,6 +623,7 @@
           />
         </div>
       </section>
+      
     </div>
     <div class="container-modal">
       <div class="modal">
