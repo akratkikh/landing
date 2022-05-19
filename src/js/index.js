@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     let json = JSON.stringify(object);
 
-    fetch("http://localhost:4000/send-email", {
+    fetch("/send-email", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
