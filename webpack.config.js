@@ -6,29 +6,79 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const CompressionPlugin = require("compression-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const SitemapPlugin = require('sitemap-webpack-plugin').default;
+const RobotstxtPlugin = require("robotstxt-webpack-plugin");
+
+const pagesUrls = [];
+
+const getAllFilesInPath = (templateDir, main) => {
+  const result = main || [];
+  let templateFiles = fs.readdirSync(templateDir);
+  let files = [];
+  templateFiles.forEach(f => {
+    const filePath = templateDir + '/' + f;
+    if (fs.lstatSync(filePath).isDirectory()) {
+      files = files.concat(getAllFilesInPath(filePath));
+      return;
+    }
+
+    if(f.indexOf('.html') > 0 ){
+      const url = templateDir.substr(templateDir.lastIndexOf('/')).replace('/src', '/');
+      pagesUrls.push(url);
+      files.push({
+        path: filePath,
+        fileName: f
+      });
+    }
+  })
+
+  return result.concat(files);
+}
+
+
+let pathsSitemap = [];
+
+const optionsRobots = {
+  policy: [
+    {
+      userAgent: "*",
+      allow: "/",
+      crawlDelay: 2,
+    },
+  ],
+  sitemap: "https://adev.am/sitemap.xml",
+  host: "https://adev.am",
+};
+const generateIndexes = () => {
+  pathsSitemap = pagesUrls.map(path => ({
+    path,
+    lastmod: '2015-01-04',
+    priority: 0.8,
+    changefreq: 'monthly'
+  }))
+}
+
 
 //function generates new html page in dist, when you create new html page in src
 function generateHtmlPlugins(templateDir) {
-  const templateFiles = fs.readdirSync(templateDir);
-  return templateFiles
-    .filter((f) => {
-      return f.split(".")[1] === "html";
-    })
-    .map((item) => {
-      const parts = item.split(".");
-      const name = parts[0];
-      const extension = parts[1];
-      return new HtmlWebpackPlugin({
-        filename: `${name}.html`,
-        template: path.resolve(
-          __dirname,
-          `${templateDir}/${name}.${extension}`
-        ),
-        inject: false,
+  const allFiles = getAllFilesInPath(templateDir);
+  generateIndexes();
+  console.log('LOOOG', pathsSitemap);
+  return allFiles
+      .map((item) => {
+        const name = item.path.replace(templateDir + '/', '');
+        return new HtmlWebpackPlugin({
+          filename: name,
+          template: path.resolve(
+              __dirname,
+              item.path
+          ),
+          inject: false,
+        });
       });
-    });
 }
 
+console.log('LOOOG', pathsSitemap);
 module.exports = {
   entry: ["./src/js/index.js", "./src/scss/main.scss"],
   output: {
@@ -122,21 +172,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      filename: "portfolio/index.html",
-      template: "portfolio/index.html",
-      inject: true,
-    }),
-    new HtmlWebpackPlugin({
-      filename: "partner_with_us/index.html",
-      template: "partner_with_us/index.html",
-      inject: true,
-    }),
-    new HtmlWebpackPlugin({
-      filename: "about_us/index.html",
-      template: "about_us/index.html",
-      inject: true,
-    }),
+    new RobotstxtPlugin(optionsRobots),
     new MiniCssExtractPlugin({
       filename: "./css/main.min.css",
     }),
@@ -154,5 +190,14 @@ module.exports = {
       test: /\.js$|\.html$/,
       threshold: 10240,
     }),
-  ].concat(generateHtmlPlugins("./src")),
+  ].concat(generateHtmlPlugins("./src"), [    new SitemapPlugin({
+    base: 'https://adev.am',
+    paths: pathsSitemap,
+    options: {
+      filename: 'sitemap.xml',
+      lastmod: true,
+      changefreq: 'monthly',
+      priority: 0.4
+    }
+  }),]),
 };
